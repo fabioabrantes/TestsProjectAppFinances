@@ -2,9 +2,11 @@
   "expo": {
     "name": "appfinances",
     "slug": "appfinances",
+    "scheme":"appfinances",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
     ]
-  }
+  },
+  "name": "appfinances"
 }
