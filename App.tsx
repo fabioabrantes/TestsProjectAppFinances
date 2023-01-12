@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
 
@@ -32,22 +32,24 @@ export default function App() {
   const {userStorageLoading} = useAuth();
   
   return (
-    <ThemeProvider theme={theme}>
-      <StatusBar 
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent={true}
-      />
+    <GestureHandlerRootView style={{flex:1}}>
+      <ThemeProvider theme={theme}>
+        <StatusBar 
+            barStyle="light-content"
+            backgroundColor="transparent"
+            translucent={true}
+        />
 
-      {
-        (!fontsLoaded || userStorageLoading) ?
-          <Loading/>
-        :
-          <AuthProvider>
-            <Routes />
-          </AuthProvider>
-      }
-    </ThemeProvider>
+        {
+          (!fontsLoaded || userStorageLoading) ?
+            <Loading/>
+          :
+            <AuthProvider>
+              <Routes />
+            </AuthProvider>
+        }
+      </ThemeProvider>
+    </GestureHandlerRootView>
   )
 }
 
